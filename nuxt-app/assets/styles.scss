@@ -1,0 +1,113 @@
+@use "sass:math";
+@import "base/_mixins";
+
+@import "base/_font";
+$font-family: "Montserrat";
+:root {
+   --font-family2: "RubikBurned";
+   --transition-duration: .2s ease;
+   --transparent-color: transparernt;
+   --whitesmoke-color: whitesmoke;
+   --yellow-color: yellow;
+   --orange-color: orange;
+   --main-color: #000;
+   --white-color: #FFFF;
+   --nav-color: #5C5C5C;
+   --grey-color: #BDBDBD;
+   --turquoise-color: #32b5a4;
+   --lime-color: #A5CF8C;
+   --blue-color: #cef;;
+   --blue-hover: #A5AFFB;
+   --second-color: #BE52F2;
+   --second-hover: #DBA5F5;
+   --success-color: #00C48C;
+   --success-hover: #7DDFC3;
+   --tab-color: #0084F4;
+   --tab-hover: #66B5F8;
+   --warning-color: #FFA26B;
+   --warning-hover: #FFC7A6;
+   --danger-color: #FF647C;
+   --danger-hover: #FDAFBB;
+
+   --background-color: #ffff;
+   --text-color: #333333;
+ }
+
+//! НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
+//? Минимальная ширина страницы
+$minWidth: 320;
+//? Ширина полотна (макета)
+$maxWidth: 1920;
+//? Ширина ограничивающего контейнера (0 = нет ограничения)
+$maxWidthContainer: 1250;
+//? Общий отступ у контейнера
+// (30 = по 15px слева и справа, 0 = нет отступа)
+$containerPadding: 24;
+
+//? Ширина срабатывания первого брейкпоинта
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+//* Брейк-поинты
+$pc: toEm($containerWidth); // ПК, ноутбуки
+$tablet: toEm(991.98); // Планшеты
+$mobile: toEm(767.98); // Телефоны L
+$mobileSmall: toEm(479.98); // Телефоны S
+
+//? Тип адаптива:
+// 1 = отзывчивость (у контейнера нет брейкпоинтов),
+// 2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+$responsiveType: 1;
+
+//! Ограничивающий контейнер ======================================================================================================================================================================================================================
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Снипет (HTML): cnt
+*/
+@if ($responsiveType==1) {
+	// Отзывчивая
+	[class*="__container"] {
+		@if ($maxWidthContainer>0) {
+			max-width: toRem($maxWidthContainer);
+			box-sizing: content-box;
+			margin-inline: auto;
+		}
+		@if ($containerPadding>0) {
+			padding: 0 toRem(math.div($containerPadding, 2));
+		}
+	}
+} @else {
+	// По брейк-поинтам
+	[class*="__container"] {
+		margin-inline: auto;
+		@if ($maxWidthContainer>0) {
+			max-width: toRem($maxWidthContainer);
+			box-sizing: content-box;
+		} @else {
+			@if ($containerPadding>0) {
+				padding: 0 toRem(math.div($containerPadding, 2));
+			}
+		}
+		@media (max-width: $pc) {
+			max-width: toRem(970);
+		}
+		@media (max-width: $tablet) {
+			max-width: toRem(750);
+		}
+		@media (max-width: $mobile) {
+			max-width: none;
+			@if ($containerPadding>0 and $maxWidthContainer>0) {
+				padding: 0 toRem(math.div($containerPadding, 2));
+			}
+		}
+	}
+}
+
+//*Глобальные стили проекта
+@import "base/_normalize";
+@import "base/_globals";
+@import "base/themeDarkWhite";
+
+
+
+
