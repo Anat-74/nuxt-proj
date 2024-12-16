@@ -1,7 +1,9 @@
 <template>
 <header>
+   <div class="links">
    <NuxtLink to="/about" >About</NuxtLink>
    <NuxtLink to="/contacts" >Contacts</NuxtLink>
+</div>
 </header>
 
 <main>
@@ -9,10 +11,13 @@
 </main>
 </template>
 
-<style scoped>
-   header {
-      display: flex;
-      column-gap: 9px;
-   }
+<style lang="scss" scoped>
+.links {
+   display: flex;
+   column-gap: toRem(12);
+   padding-inline-start: toRem(7);
+   margin-block-end: toRem(9);
+   color: var(--light-coral);
+}
 </style>
 

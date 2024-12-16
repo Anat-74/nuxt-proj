@@ -2,12 +2,19 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-   modules: ['@vueuse/nuxt'],
+   modules: [
+     '@vueuse/nuxt',
+     '@pinia/nuxt',
+     '@nuxt/image',
+     'dayjs-nuxt',
+      'nuxt-typed-router',
+     'nuxt-file-storage'
+   ],
    vite: {
       css: {
         preprocessorOptions: {
           scss: {
-            additionalData: '@use "~/assets/styles.scss" as *;'
+            additionalData: '@use "~/assets/scss/styles.scss" as *;'
           }
          },
          preprocessorMaxWorkers: true 

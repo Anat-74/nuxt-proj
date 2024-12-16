@@ -2,36 +2,8 @@
 @import "base/_mixins";
 
 @import "base/_font";
-$font-family: "Montserrat";
-:root {
-   --font-family2: "RubikBurned";
-   --transition-duration: .2s ease;
-   --transparent-color: transparernt;
-   --whitesmoke-color: whitesmoke;
-   --yellow-color: yellow;
-   --orange-color: orange;
-   --main-color: #000;
-   --white-color: #FFFF;
-   --nav-color: #5C5C5C;
-   --grey-color: #BDBDBD;
-   --turquoise-color: #32b5a4;
-   --lime-color: #A5CF8C;
-   --blue-color: #cef;;
-   --blue-hover: #A5AFFB;
-   --second-color: #BE52F2;
-   --second-hover: #DBA5F5;
-   --success-color: #00C48C;
-   --success-hover: #7DDFC3;
-   --tab-color: #0084F4;
-   --tab-hover: #66B5F8;
-   --warning-color: #FFA26B;
-   --warning-hover: #FFC7A6;
-   --danger-color: #FF647C;
-   --danger-hover: #FDAFBB;
 
-   --background-color: #ffff;
-   --text-color: #333333;
- }
+$font-family: "Montserrat";
 
 //! НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
 //? Минимальная ширина страницы
