@@ -24,8 +24,8 @@ svg * {
 }
 
 :where(button[class]) {
-   padding: 0;
    cursor: pointer;
+   padding: 0;
    border: none;
    background-color: transparent;
  }

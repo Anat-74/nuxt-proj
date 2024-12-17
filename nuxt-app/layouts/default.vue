@@ -17,7 +17,8 @@
    column-gap: toRem(12);
    padding-inline-start: toRem(7);
    margin-block-end: toRem(9);
-   color: var(--light-coral);
+   color: var(--light-green);
+   @include adaptiveValue("font-size", 24, 16);
 }
 </style>
 
